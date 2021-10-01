@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ConvertTest extends Assert {
-    @DataProvider
+    @DataProvider(name = "convertData")
     public Object[][] convertData() {
         return new Object[][]{
                 {"-0", 0.0},
@@ -24,6 +24,6 @@ public class ConvertTest extends Assert {
 
     @Test(expectedExceptions = NumberFormatException.class)
     public void testException() {
-        converter.Convert(null);
+        converter.Convert("null");
     }
 }
