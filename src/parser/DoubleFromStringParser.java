@@ -11,12 +11,12 @@ import java.util.regex.Pattern;
 
 public class DoubleFromStringParser {
     static Logger logger = LogManager.getLogger();
-    final static String REG = "^([+-]?(\\d+\\.?\\d*|\\d*\\.?\\d+))$";
+    final static String REGEX_DOUBLE = "^([+-]?(\\d+\\.?\\d*|\\d*\\.?\\d+))$";
 
     public List<Double> Parse(String input) {
         String[] splittedInput = input.split("[\\s, \\,]");
 
-        Pattern pattern = Pattern.compile(REG);
+        Pattern pattern = Pattern.compile(REGEX_DOUBLE);
         StringToDoubleConverter converter = new StringToDoubleConverter();
         List<Double> output = new ArrayList<>(2);
 
