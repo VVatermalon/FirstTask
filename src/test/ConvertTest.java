@@ -10,14 +10,14 @@ public class ConvertTest extends Assert {
     public Object[][] convertData() {
         return new Object[][]{
                 {"-0", 0.0},
-                {"5.0000", 5.0}
+                {"5.", 5.0}
         };
     }
 
     public final StringToDoubleConverter converter = new StringToDoubleConverter();
 
     @Test(dataProvider = "convertData")
-    public void testConverter(String input, float expected) {
+    public void testConverter(String input, double expected) {
         double result = converter.Convert(input);
         assertEquals(result, expected);
     }
